@@ -1,5 +1,6 @@
-<h1><%= @post[:title] %></h1>
-<p>Author: <%= @post.author %></p>
-<p>Published on: <%= @post.published_at.strftime("%B %d, %Y") %></p>
+<div class="prose">
+	<h1><%= @post[:title] %></h1>
+	<p>Author: <%= @post[:author] %></p>
 
-<%= markdown post.content %>
+	<%= markdown @post[:content] %>
+</div>
