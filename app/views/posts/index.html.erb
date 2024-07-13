@@ -1,8 +1,6 @@
-<div class="prose">
-	<h1>Posts</h1>
-	<% @posts.each do |post| %>
-		<%= post[:title] %>
-		<%= post[:author] %>
-		<%= link_to post[:title], post_path(post[:slug]) %>
-	<% end %>
-</div>
+<h1>Posts</h1>
+<% @posts.each do |post| %>
+	<%= post[:title] %>
+	<%= post[:author] %>
+	<%= link_to post[:title], post_path(post[:slug]) %>
+<% end %>

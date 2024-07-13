@@ -20,7 +20,8 @@ class PostsController < ApplicationController
     )
     {
       **parsed.front_matter.transform_keys(&:to_sym),
-      content: parsed.content
+      content: parsed.content,
+      tags: parsed.front_matter["tags"].split(",")
     }
   end
 

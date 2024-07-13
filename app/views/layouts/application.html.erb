@@ -10,7 +10,13 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="dark:bg-[#121212] bg-white">
+    <header class="mt-20">
+      <p>Hello im a header</p>
+      <%= link_to "Improve Your Ruby Skills", posts_path %>
+    </header>
+    <main class="container mx-auto mt-28 px-5 flex flex-col prose dark:prose-invert">
+        <%= yield %>
+    </main>
   </body>
 </html>

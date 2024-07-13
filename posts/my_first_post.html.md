@@ -2,7 +2,7 @@
 title: My First Post
 date: 2023/01/21
 description: Portfolio site launch post.
-tag: web development, personal
+tags: web development, personal
 author: Me
 slug: my-first-post
 ---

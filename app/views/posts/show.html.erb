@@ -1,6 +1,10 @@
-<div class="prose">
-	<h1><%= @post[:title] %></h1>
-	<p>Author: <%= @post[:author] %></p>
-
-	<%= markdown @post[:content] %>
+<h1><%= @post[:title] %></h1>
+<p>Author: <%= @post[:author] %></p>
+<div>
+	<% @post[:tags].each do |tag| %>
+        <span class="bg-gray-600 text-gray-100 p-0.5 rounded cursor-pointer text-md hover:bg-gray-700"><%= tag %></span>
+    <% end %>
+	
 </div>
+
+<%= markdown @post[:content] %>
