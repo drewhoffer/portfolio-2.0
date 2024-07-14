@@ -1,10 +1,12 @@
 <h1><%= @post[:title] %></h1>
 <p>Author: <%= @post[:author] %></p>
-<div>
-	<% @post[:tags].each do |tag| %>
-        <span class="bg-gray-600 text-gray-100 p-0.5 rounded cursor-pointer text-md hover:bg-gray-700"><%= tag %></span>
+<% if @post[:tags].present? %>
+    <div class="flex gap-2 items-start justify-start flex-wrap">
+    <% @post[:tags].each_with_index do |tag, i| %>
+    <span class="bg-gray-600 text-nowrap text-gray-100 py-0 px-1 rounded cursor-pointer text-md <%= ['bg-blue-600', 'bg-green-600', 'bg-yellow-600', 'bg-red-600', 'bg-indigo-600', 'bg-purple-600', 'bg-pink-600'][i % 7] %> hover:bg-gray-700">
+        <%= tag %>
+    </span>
     <% end %>
-	
-</div>
-
+    </div>
+<% end %>
 <%= markdown @post[:content] %>
